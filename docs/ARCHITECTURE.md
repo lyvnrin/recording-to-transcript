@@ -4,12 +4,6 @@
 
 Transcribe is a Next.js application deployed on Vercel. The browser handles audio compression through the Web Audio API. A Next.js API route proxies the compressed file to Groq's Whisper API for transcription, and the transcript is returned to the frontend for display and download. Nothing is stored on the server.
 
-## Architecture Diagram
-
-![Transcribe architecture diagram](assets/architecture-diagram.png)
-
-*Figure 1: Audio is compressed in the browser, proxied through a Next.js API route to Groq's Whisper API, and returned as text.*
-
 ## Pipeline Stages
 
 1. **File selection.** The user drops or picks an audio file in the browser. The frontend checks the file extension against the accepted list (.m4a, .mp3, .wav, .webm) and rejects anything else.
@@ -91,7 +85,6 @@ app/
 lib/
   audio.js                  Client-side decoding, resampling, WAV encoding, chunking
 docs/                       Project documentation
-  assets/                   Images used by the docs
 next.config.js              Next.js configuration
 ```
 
