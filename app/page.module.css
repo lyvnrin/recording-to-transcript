@@ -1,0 +1,147 @@
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.header p {
+  margin: 0;
+  color: #8b8f98;
+}
+
+.btn {
+  font: inherit;
+  color: inherit;
+  background: #16181c;
+  border: 1px solid #2a2d33;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: #7aa2ff;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 40px 20px;
+  border: 2px dashed #2a2d33;
+  border-radius: 12px;
+  background: #16181c;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.dragging {
+  border-color: #7aa2ff;
+  background: #1a1f2b;
+}
+
+.disabled {
+  opacity: 0.6;
+}
+
+.dropTitle {
+  margin: 0;
+  font-weight: 500;
+}
+
+.dropHint {
+  margin: 0 0 8px;
+  color: #8b8f98;
+  font-size: 0.85rem;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid #2a2d33;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8b8f98;
+}
+
+.busy .dot {
+  background: #7aa2ff;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.done .dot {
+  background: #5fd08a;
+}
+
+.error .dot,
+.error .label {
+  background: #ff6b6b;
+}
+
+.error .label {
+  background: none;
+  color: #ff6b6b;
+}
+
+.detail {
+  color: #8b8f98;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.transcript {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.text {
+  margin: 0;
+  padding: 20px;
+  background: #0a0b0d;
+  border: 1px solid #2a2d33;
+  border-radius: 12px;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
