@@ -11,6 +11,7 @@ function fail(message, status) {
 
 export async function POST(request) {
   const apiKey = process.env.GROQ_API_KEY
+  console.log(`GROQ_API_KEY present: ${Boolean(apiKey)}`)
   if (!apiKey) {
     return fail('GROQ_API_KEY is not set on the server.', 500)
   }
