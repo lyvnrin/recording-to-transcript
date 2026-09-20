@@ -145,3 +145,52 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 100%;
+  padding: 24px;
+  background: #16181c;
+  border: 1px solid #2a2d33;
+  border-radius: 12px;
+}
+
+.qr {
+  padding: 8px;
+  background: #fff;
+  border-radius: 8px;
+  line-height: 0;
+}
+
+.qr svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.counter {
+  min-width: 64px;
+  text-align: center;
+  color: #8b8f98;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+}

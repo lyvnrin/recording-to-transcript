@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { compressAudio } from '../lib/audio'
+import QrModal from './QrModal'
 import styles from './page.module.css'
 
 const ACCEPTED = ['.m4a', '.mp3', '.wav', '.webm']
@@ -44,6 +45,7 @@ export default function Home() {
   const [fileName, setFileName] = useState('')
   const [transcript, setTranscript] = useState('')
   const [copied, setCopied] = useState(false)
+  const [showQr, setShowQr] = useState(false)
 
   const busy = status === 'compressing' || status === 'transcribing'
 
@@ -171,10 +173,19 @@ export default function Home() {
             <button type="button" className={styles.btn} onClick={download}>
               Download as .md
             </button>
+            <button
+              type="button"
+              className={styles.btn}
+              disabled={!transcript}
+              onClick={() => setShowQr(true)}
+            >
+              Show QR Code
+            </button>
           </div>
           <pre className={styles.text}>{transcript || '(No speech detected)'}</pre>
         </section>
       )}
+      {showQr && <QrModal text={transcript} onClose={() => setShowQr(false)} />}
     </main>
   )
 }
